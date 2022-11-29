@@ -5,16 +5,17 @@ import java.util.Scanner;
 public class NavigateExercise {
 
     public NavigateExercise() {
-        System.out.print("Chọn bài tập cần kiểm tra (chọn 1 trên tổng số 22 bài): ");
+        System.out.print("Chọn bài tập cần kiểm tra (chọn 0 trên tổng số 22 bài): ");
         Scanner sc = new Scanner(System.in);
         int ordinalNumberOfExercise = sc.nextInt();
 
-        while (ordinalNumberOfExercise > 22 || ordinalNumberOfExercise < 1) {
+        while (ordinalNumberOfExercise > 22 || ordinalNumberOfExercise < 0) {
             System.out.print("Lựa chọn vừa rồi không nằm trong khoảng 22, vui lòng nhập lại: ");
             ordinalNumberOfExercise = sc.nextInt();
         }
 
         switch (ordinalNumberOfExercise) {
+            case 0 -> new ExerciseKara();
             case 1 -> new ExerciseNo1();
             case 2 -> new ExerciseNo2();
             case 3 -> new ExerciseNo3();
